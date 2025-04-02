@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "lig/database.php";
+require_once __DIR__ . "lib/database.php";
 class Order {
     private int $id;
     private string $status;
