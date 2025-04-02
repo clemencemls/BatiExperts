@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . "lig/database.php";
 
 class Client{
     private int $id;
