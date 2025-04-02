@@ -8,7 +8,7 @@ class Client{
     private string $email;
     private string $telephone;
 
-    public function getID(): int
+    public function getId(): int
     {
         return $this->id;
     }
