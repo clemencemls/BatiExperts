@@ -12,6 +12,7 @@
             <th>Actions</th>
         </tr>
     </thead>
+    <?php var_dump($clients); ?>
     <tbody>
         <?php foreach($clients as $client): ?>
 

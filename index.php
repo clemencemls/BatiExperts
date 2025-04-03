@@ -1,18 +1,39 @@
 <?php
 
-require_once __DIR__ . '/models/Client.php';
-require_once __DIR__ . '/models/Order.php';
-require_once __DIR__ . '/lib/database.php';
+require_once __DIR__ . '/controllers/ClientController.php';
 
-$db = new DatabaseConnection();
+$clientControl = new ClientController();
+// $orderRepo = new OrderRepository();
 
-$statement = $db->getConnected()->prepare('SELECT * FROM clients;');
-$statement->execute();
-$clients = $statement->fetchAll();
+$action = $_GET['action'] ?? 'index';
+$id = $_GET['id'] ?? null;
 
-$statement = $db->getConnected()->prepare('SELECT * FROM orders;');
-$statement->execute();
-$orders = $statement->fetchAll();
+switch ($action){
+    case 'view':
+        $clientControl->show($id);
+        break;
+    case 'create':
+        $clientControl->create();
+        break;
+    case 'index':
+        $clientControl->clientList();
+        break;
+    case 'store':
+        $clientControl->store();
+        break;
+    case 'edit':
+        $clientControl->edit($id);
+        break;
+    case 'update':
+        $clientControl->update();
+        break;
+    case 'delete':
+        $clientControl->delete($id);
+        break;
+    default:
+        $clientControl->forbidden();
+        break;
+}
 
-var_dump($clients);
-var_dump($orders);
+
+

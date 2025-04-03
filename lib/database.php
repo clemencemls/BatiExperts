@@ -29,7 +29,7 @@ class DatabaseConnection
             }
 
         }
-        
+
         return $this->database;
     }
 }
