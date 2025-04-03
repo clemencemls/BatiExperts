@@ -9,9 +9,12 @@
     </div>
 
     <div class="mb-3">
-        <label for="email" class="form-label">Statut :</label>
-        <textarea class="form-control" id="statut" name="statut" rows="3" required></textarea>
-    </div>
+        <label for="Statut" class="form-label">Statut :</label>
+        <select class="form-control" name="status" id="status">
+            <option value="En attente">En attente</option>
+            <option value="Expediée">Expediée</option>
+            <option value="Livrée">Livrée</option>
+        </select>
 
     <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>

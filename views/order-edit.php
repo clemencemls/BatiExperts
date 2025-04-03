@@ -9,12 +9,13 @@
         <label for="title" class="form-label">Titre :</label>
         <input type="text" class="form-control" id="title" name="title" value="<?= $client->getTitle() ?>" required>
     </div>
+    <label for="Statut" class="form-label">Statut :</label>
+    <select class="form-control" name="status" id="status">
+            <option <?= $status == 'En attente' ? 'selected' : '' ?> value="En attente">En attente</option>
+            <option <?= $status == 'Expediée' ? 'selected' : '' ?> value="Expediée">Expediée</option>
+            <option <?= $status == 'Livrée' ? 'selected' : '' ?> value="Livrée">Livrée</option>
+        </select>
 
-    <div class="mb-3">
-        <label for="email" class="form-label">Statut :</label>
-        <textarea class="form-control" id="status" name="status" rows="3" required><?= $client->getStatus() ?></textarea>
-    </div>
-    
     <button type="submit" class="btn btn-primary">Modifier</button>
 </form>
 
